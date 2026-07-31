@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday My Love ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:cursive;
+}
+
+body{
+
+min-height:100vh;
+overflow-x:hidden;
+
+background:
+linear-gradient(rgba(120,0,20,.55),rgba(120,0,20,.55)),
+url("couple.jpg");
+
+background-size:cover;
+background-position:center;
+
+color:white;
+text-align:center;
+
+}
+
+
+/* Cake Page */
+
+#cakePage{
+
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+}
+
+
+h1{
+
+font-size:38px;
+
+text-shadow:
+0 0 10px white,
+0 0 20px red;
+
+}
+
+
+
+#cake{
+
+width:260px;
+
+margin-top:30px;
+
+cursor:pointer;
+
+transition:.5s;
+
+}
+
+
+
+#cake:hover{
+
+transform:scale(1.08);
+
+}
+
+
+
+.cakeText{
+
+font-size:28px;
+
+margin-top:20px;
+
+animation:glow 2s infinite alternate;
+
+}
+
+
+
+@keyframes glow{
+
+from{
+text-shadow:0 0 10px white;
+}
+
+to{
+text-shadow:0 0 30px red;
+}
+
+}
+
+
+
+
+
+/* Surprise */
+
+#surprise{
+
+display:none;
+
+padding:25px;
+
+animation:open 2s;
+
+}
+
+
+
+@keyframes open{
+
+from{
+
+opacity:0;
+transform:scale(.5);
+
+}
+
+to{
+
+opacity:1;
+transform:scale(1);
+
+}
+
+}
+
+
+
+
+.photo{
+
+width:280px;
+
+height:350px;
+
+object-fit:cover;
+
+border-radius:25px;
+
+border:5px solid white;
+
+margin:20px;
+
+box-shadow:0 0 30px red;
+
+}
+
+
+
+.message{
+
+font-size:22px;
+
+line-height:1.8;
+
+max-width:800px;
+
+margin:auto;
+
+}
+
+
+
+#loveText{
+
+white-space:pre-line;
+
+}
+
+
+
+/* Heart Beat */
+
+.heartBeat{
+
+display:inline-block;
+
+animation:beat 1s infinite;
+
+}
+
+
+
+@keyframes beat{
+
+0%{
+transform:scale(1);
+}
+
+25%{
+transform:scale(1.3);
+}
+
+50%{
+transform:scale(1);
+}
+
+75%{
+transform:scale(1.3);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+
+
+
+/* Floating Hearts */
+
+.heart{
+
+position:fixed;
+
+bottom:-50px;
+
+font-size:35px;
+
+animation:float 6s linear;
+
+}
+
+
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-110vh);
+
+opacity:0;
+
+}
+
+}
+
+
+
+
+/* Balloons */
+
+.balloon{
+
+position:fixed;
+
+bottom:-100px;
+
+font-size:55px;
+
+animation:balloon 8s linear;
+
+}
+
+
+
+@keyframes balloon{
+
+100%{
+
+transform:translateY(-120vh);
+
+}
+
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<audio id="music">
+
+<source src="birthday-song.mp3" type="audio/mp3">
+
+</audio>
+
+
+
+<!-- Cake Screen -->
+
+
+<div id="cakePage">
+
+
+<h1>
+<span class="heartBeat">❤️</span>
+Tape The Cake Janeman❤️
+<span class="heartBeat">❤️</span>
+</h1>
+
+
+<img id="cake"
+src="cake.png"
+onclick="cutCake()">
+
+
+
+<p class="cakeText">
+
+<span class="heartBeat">❤️</span>
+
+A Special Cake For My Love
+
+<span class="heartBeat">❤️</span>
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<!-- Surprise Screen -->
+
+
+<div id="surprise">
+
+
+<h1>
+
+<span class="heartBeat">❤️</span>
+
+Happy Birthday Meri Jaan❤️
+
+<span class="heartBeat">❤️</span>
+
+</h1>
+
+
+<img id="photo"
+class="photo"
+src="photo1.jpg">
+
+
+
+<div class="message">
+
+<p id="loveText"></p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+function cutCake(){
+
+
+document.getElementById("cake").src="cake-cut.png";
+
+
+document.getElementById("music").play();
+
+
+
+setTimeout(()=>{
+
+
+document.getElementById("cakePage").style.display="none";
+
+
+document.getElementById("surprise").style.display="block";
+
+
+typing();
+
+
+},2000);
+
+
+}
+
+
+
+
+
+// Typing Love Letter
+
+
+let text=`
+
+Meri Pyari Jaan ❤️
+
+
+Aaj ka din mere liye sabse special hai,
+kyunki aaj meri duniya ki sabse pyari ladki ka birthday hai. 🎂
+
+
+Tum meri smile ho,
+meri khushi ho,
+aur meri life ka sabse pyara hissa ho. ❤️️
+
+
+JAAN MA BHOT KHUSH HU KI TU MERI LIFE MA AAI MERA SAB KUCH TERTA HI SARU HOV H OR TERPA HI KHATAM HOV H .
+MNA BAS TU CHIYE H NA HI MERI ES PYARI SI LIFE OR FAMILY MA .MNA  TERA SATH JAAN HAPPYLY PYAR TA LIFE SPEND KRNI H JAAN ❤️️. 
+
+
+Thank you meri life mein aane ke liye life partner❤️️ .
+
+
+I Love You Forever ❤️
+
+`;
+
+
+
+let index=0;
+
+
+function typing(){
+
+
+if(index < text.length){
+
+
+document.getElementById("loveText").innerHTML += text.charAt(index);
+
+
+index++;
+
+
+setTimeout(typing,50);
+
+
+}
+
+
+}
+
+
+
+
+
+// Photos
+
+
+let photos=[
+
+"photo1.jpg",
+
+"photo2.jpg",
+
+"photo3.jpg",
+
+"photo4.jpg"
+
+];
+
+
+let p=0;
+
+
+setInterval(()=>{
+
+
+if(document.getElementById("surprise").style.display=="block"){
+
+
+p++;
+
+
+if(p>=photos.length)
+p=0;
+
+
+document.getElementById("photo").src=photos[p];
+
+
+}
+
+
+},3000);
+
+
+
+
+
+
+
+// Hearts
+
+
+setInterval(()=>{
+
+
+let h=document.createElement("div");
+
+
+h.className="heart";
+
+
+h.innerHTML="❤️";
+
+
+h.style.left=Math.random()*100+"vw";
+
+
+document.body.appendChild(h);
+
+
+
+setTimeout(()=>{
+
+h.remove();
+
+},6000);
+
+
+
+},300);
+
+
+
+
+
+
+
+// Balloons
+
+
+setInterval(()=>{
+
+
+let b=document.createElement("div");
+
+
+b.className="balloon";
+
+
+b.innerHTML="🎈";
+
+
+b.style.left=Math.random()*100+"vw";
+
+
+document.body.appendChild(b);
+
+
+
+setTimeout(()=>{
+
+b.remove();
+
+},8000);
+
+
+
+},1000);
+
+
+
+</script>
+
+
+</body>
+
+</html>
